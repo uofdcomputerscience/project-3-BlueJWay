@@ -38,7 +38,7 @@ class DataTestViewController: UIViewController {
     }
     
     func submitBook() {
-        let book = Book(id: nil, title: "A Tale of Two Cities", author: "Charles Dickens", published: "1859", imageURLString: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Tales_serial.jpg")
+        let book = Book(title: "A Tale of Two Cities", author: "Charles Dickens", published: "1859", image: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Tales_serial.jpg")
         bookService.createBook(book: book) {
             print("book created")
         }
