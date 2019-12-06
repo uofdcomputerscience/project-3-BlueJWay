@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccI-dV-IYg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OlH-T6-2Xu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -129,7 +129,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4zD-Zy-LOs">
-                                <rect key="frame" x="20" y="80" width="374" height="736"/>
+                                <rect key="frame" x="20" y="126" width="374" height="690"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -206,12 +206,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Book Review List" id="8QY-TK-Azk"/>
                     <connections>
-                        <outlet property="bodyLabel" destination="v5s-2Z-yLD" id="8u3-GI-eaE"/>
-                        <outlet property="bookLabel" destination="BkP-1G-SUN" id="OSN-I6-k28"/>
-                        <outlet property="dateLabel" destination="fQv-XY-SB7" id="BJa-Eo-GEj"/>
-                        <outlet property="reviewerLabel" destination="cZX-Gf-qkW" id="YLV-on-lkz"/>
                         <outlet property="tableView" destination="4zD-Zy-LOs" id="Jwy-zF-brq"/>
-                        <outlet property="titleLabel" destination="Kc5-rz-xy5" id="9CW-eO-xTF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cid-dQ-t8P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

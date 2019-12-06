@@ -11,11 +11,7 @@ import Foundation
 
 class ReviewListViewController: UIViewController {
     
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var reviewerLabel: UILabel!
-    @IBOutlet var bookLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var bodyLabel: UILabel!
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -61,11 +57,11 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     let index = service.reviews[indexPath.item]
     let cell = tableView.dequeueReusableCell(withIdentifier: "bookcell")!
     if let reviewcell = cell as? ReviewCell {
-        titleLabel.text = "\(index.title)"
-        reviewerLabel.text = "Written by: \(index.reviewer)"
-        bookLabel.text = "Book ID: \(index.bookId)"
-        dateLabel.text = "\(formatter.string(from: index.date!))"
-        bodyLabel.text = "Preview: \(index.body)"
+        reviewcell.title.text = "\(index.title)"
+        reviewcell.reviewer.text = "Written by: \(index.reviewer)"
+        reviewcell.book.text = "Book ID: \(index.bookId)"
+        reviewcell.date.text = "\(formatter.string(from: index.date!))"
+        reviewcell.body.text = "Preview: \(index.body)"
                         
             
         
