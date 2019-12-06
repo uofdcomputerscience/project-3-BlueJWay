@@ -54,23 +54,26 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 }
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let index = service.reviews[indexPath.item]
-    let cell = tableView.dequeueReusableCell(withIdentifier: "reviewcell")!
-    if let reviewcell = cell as? ReviewCell {
-        reviewcell.title.text = "\(index.title)"
-        reviewcell.reviewer.text = "Written by: \(index.reviewer)"
-        reviewcell.book.text = "Book ID: \(index.bookId)"
-        reviewcell.date.text = "\(formatter.string(from: index.date!))"
-        reviewcell.body.text = "Preview: \(index.body)"
-                        
-            
+let index = service.reviews[indexPath.item]
+    let cell = tableView.dequeueReusableCell(withIdentifier: "bookcell")!
+if let reviewcell = cell as? ReviewCell {
+    reviewcell.title.text = "\(index.title)"
+    reviewcell.reviewer.text = "Written by: \(index.reviewer)"
+    reviewcell.book.text = "Book ID: \(index.bookId)"
+    if let date = index.date {
+        reviewcell.date.text = "\(formatter.string(from: date))"
+    }
+    reviewcell.body.text = "Preview: \(index.body)"
+                    
         
-            
-        }
+    
+        
+    }
     
     //task.resume()
     //}
     return cell
 
     }
+ 
 }
