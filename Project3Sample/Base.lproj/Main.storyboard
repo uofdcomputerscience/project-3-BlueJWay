@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OlH-T6-2Xu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccI-dV-IYg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -182,6 +182,7 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="reviewcell"/>
                                         <connections>
                                             <outlet property="body" destination="v5s-2Z-yLD" id="EJS-zi-bmA"/>
                                             <outlet property="book" destination="BkP-1G-SUN" id="Pjg-3f-Piu"/>
@@ -262,6 +263,7 @@
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="bookcell"/>
                                         <connections>
                                             <outlet property="bookImage" destination="Y0l-Tt-sYL" id="J8S-uU-rh2"/>
                                             <outlet property="titleLabel" destination="fg9-5a-qCT" id="zKn-Hv-YTj"/>
