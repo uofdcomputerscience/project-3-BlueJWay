@@ -55,7 +55,7 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 let index = service.reviews[indexPath.item]
-    let cell = tableView.dequeueReusableCell(withIdentifier: "bookcell")!
+    let cell = tableView.dequeueReusableCell(withIdentifier: "reviewcell")!
 if let reviewcell = cell as? ReviewCell {
     reviewcell.title.text = "\(index.title)"
     reviewcell.reviewer.text = "Written by: \(index.reviewer)"
