@@ -60,19 +60,24 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
             //    let image = UIImage(data: data)
             //    DispatchQueue.main.async {
                     
-        bookcell.bookImage.image = UIImage()//service.image(for: index, completion: (Book, UIImage?) -> Void)
+        service.image(for: index) { [weak self] (retrievedBook, image) in
+        if index.id == retrievedBook.id {
+            DispatchQueue.main.async {
+                bookcell.bookImage.image = image
+            }
                         
             
-        
+            }
             
         }
-    
+    }
     //task.resume()
     //}
     return cell
 
-    }
     
     
     
+
+}
 }
