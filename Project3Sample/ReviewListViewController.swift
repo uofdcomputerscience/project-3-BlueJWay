@@ -80,19 +80,16 @@ extension ReviewListViewController: UITableViewDelegate {
 
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // the actual function name is much longer, but I’m not working inside of Xcode right now
-    selectedReview = service.reviews[indexPath.row]
-    //let newViewController = ReviewDetailViewController.self
-    //ReviewDetailViewController.self.thisReview = selectedReview
-      //  present(animated: true, newViewController)
-}
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.destination is ReviewDetailViewController
+        guard let button = sender as? UIButton else { return }
+        guard let cell = button.superview?.superview as? UITableViewCell else { return }
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        selectedReview = service.reviews[indexPath.row]
+        if segue.destination is BookDetailViewController
         {
             let reviewDetail = segue.destination as? ReviewDetailViewController
-         reviewDetail!.thisReview = selectedReview
+            reviewDetail?.thisReview = selectedReview
         }
     }
 

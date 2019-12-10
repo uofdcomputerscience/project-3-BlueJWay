@@ -83,17 +83,21 @@ extension BookListViewController: UITableViewDelegate {
 
     
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    // the actual function name is much longer, but I’m not working inside of Xcode right now
-    selectedBook = service.books[indexPath.row]
-    
-}
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    // the actual function name is much longer, but I’m not working inside of Xcode right now
+//    selectedBook = service.books[indexPath.row]
+//
+//}
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
+        guard let button = sender as? UIButton else { return }
+        guard let cell = button.superview?.superview as? UITableViewCell else { return }
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        selectedBook = service.books[indexPath.row]
         if segue.destination is BookDetailViewController
         {
             let bookDetail = segue.destination as? BookDetailViewController
-         bookDetail?.thisBook = selectedBook
+            bookDetail?.thisBook = selectedBook
         }
     }
 

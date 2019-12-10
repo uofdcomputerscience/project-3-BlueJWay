@@ -13,10 +13,10 @@ struct Book: Codable {
     let title: String
     let author: String
     let published: String
-    let imageURLString: String
+    let imageURLString: String?
     
     var imageURL: URL? {
-        return URL(string: imageURLString)
+        return URL(string: imageURLString ?? "")
     }
     init(title: String, author: String, published: String, image: String){
         self.id = nil
