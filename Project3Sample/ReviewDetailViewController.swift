@@ -10,7 +10,7 @@ import UIKit
 
 class ReviewDetailViewController: UIViewController {
     
-    var thisReview: Review!
+    var thisReview: Review! = Review(id: nil, bookId: 0, date: Date(), reviewer: "Bob", title: "hehe", body: "lame")
     let formatter = DateFormatter()
     
     

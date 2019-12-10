@@ -20,8 +20,7 @@ class DataTestViewController: UIViewController {
         super.viewDidLoad()
         fetchBooks()
         fetchReviews()
-        submitBook()
-        submitReview()
+        setImage()
     }
     
     func fetchBooks() {

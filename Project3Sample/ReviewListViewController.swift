@@ -16,20 +16,18 @@ class ReviewListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var service = ReviewService()
-    
+    var selectedReview: Review!
     let formatter = DateFormatter()
     //formatter.dateFormat = "yyyy-MM-dd hh:mm"
     //let dateString = formatter.string(from: thisDate)
       //"yyyy-MM-dd hh:mm"
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.destination is ReviewDetailViewController
-        {
-            let reviewDetail = segue.destination as? ReviewDetailViewController
-            //reviewDetail?.thisReview = viewButton.reviewTag
+    @IBAction func refresh(_ sender: UIButton){
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
         }
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,4 +74,26 @@ if let reviewcell = cell as? ReviewCell {
 
     }
  
+}
+
+extension ReviewListViewController: UITableViewDelegate {
+
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // the actual function name is much longer, but I’m not working inside of Xcode right now
+    selectedReview = service.reviews[indexPath.row]
+    //let newViewController = ReviewDetailViewController.self
+    //ReviewDetailViewController.self.thisReview = selectedReview
+      //  present(animated: true, newViewController)
+}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is ReviewDetailViewController
+        {
+            let reviewDetail = segue.destination as? ReviewDetailViewController
+         reviewDetail!.thisReview = selectedReview
+        }
+    }
+
 }

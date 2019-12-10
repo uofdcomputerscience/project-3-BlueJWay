@@ -11,20 +11,17 @@ import UIKit
 class BookListViewController: UIViewController {
     
    
-    
+    var selectedBook: Book?
     @IBOutlet weak var tableView: UITableView!
     var viewButton: BookButton!
        
-       var service: BookService = BookService()
+    var service: BookService = BookService()
        
-       override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-       {
-           if segue.destination is BookDetailViewController
-           {
-               let bookDetail = segue.destination as? BookDetailViewController
-            bookDetail?.thisBook = viewButton.bookTag
-           }
-       }
+    @IBAction func refresh(_ sender: UIButton){
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -80,4 +77,24 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
 
 }
+}
+
+extension BookListViewController: UITableViewDelegate {
+
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // the actual function name is much longer, but I’m not working inside of Xcode right now
+    selectedBook = service.books[indexPath.row]
+    
+}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is BookDetailViewController
+        {
+            let bookDetail = segue.destination as? BookDetailViewController
+         bookDetail?.thisBook = selectedBook
+        }
+    }
+
 }
